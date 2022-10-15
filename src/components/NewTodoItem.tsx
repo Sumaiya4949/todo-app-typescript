@@ -1,4 +1,5 @@
 import { FormEvent, useRef } from "react";
+import styles from './NewTodo.module.css';
 
 const NewTodoItem: React.FC<{ onAddTodo: ( text: string ) => void }> = (props) => {
 // Extract props
@@ -16,10 +17,10 @@ const submitHandler = (event: FormEvent) => {
   onAddTodo(inputText);
 }
   return (
-    <form onSubmit={submitHandler}>
-      <label htmlFor="text">Todo Text</label>
-      <input type='text' id='text' ref={inputTextRef}/>
-      <button>Add Todo</button>
+    <form  className={styles.form} onSubmit={submitHandler}>
+      <label className={styles.label} htmlFor="text">Todo Text</label>
+      <input className={styles.input} type='text' id='text' ref={inputTextRef}/>
+      <button className={styles.button}>Add Todo</button>
     </form>
   )
 }
