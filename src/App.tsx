@@ -5,9 +5,7 @@ import {Todo} from "./models/Todo";
 import { useState } from 'react';
 
 function App() {
-  const todos = [new Todo("learn java"), new Todo("learn python")];
-
-  const [todo, setTodo] = useState<Todo[]>(todos); 
+  const [todo, setTodo] = useState<Todo[]>([]); 
 
   const addTodoHandler = (text: string) => {
     setTodo((prevState => [...prevState, new Todo(text)]))
